@@ -38,8 +38,8 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-           macrohub/rotten-potatoes:v${{ github.run_number }}
-           macrohub/rotten-potatoes:latest
+           macrohub/conversao-temperatura:v${{ github.run_number }}
+           macrohub/conversao-temperatura:latest
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
@@ -56,6 +56,6 @@ jobs:
       with:
         manifests: |
           k8s/deployment.yaml
-        images: macrohub/rotten-potatoes:v${{ github.run_number }}
+        images: macrohub/conversao-temperatura:v${{ github.run_number }}
 
     
